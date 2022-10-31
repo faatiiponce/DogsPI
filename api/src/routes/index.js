@@ -1,20 +1,14 @@
 const { Router } = require('express');
-const dogRoute = require('./dog')
-const temperRoute = require('./temper')
-const { dogApi }= require('./dogapi')
-
+const dogRouter = require('./dogRoute');
+const temperRouter = require('./temperRoute');
+const router = Router();
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
-
-const router = Router();
-
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
-
-// router.use('/dogs', dogRoute)
-// router.use('//temperaments', temperRoute)
+router.use('/dogs', dogRouter)
+router.use('/temperaments', temperRouter)
 
 
-dogApi()
+
 module.exports = router;
+

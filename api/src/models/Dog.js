@@ -5,7 +5,7 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('dog', {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID,
       allowNull: false,
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4
@@ -15,16 +15,19 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     height: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },
     weight: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },
     years: {
       type: DataTypes.STRING,
     },
+    image: {
+      type: DataTypes.STRING(500),
+    }
   });
 };
 
